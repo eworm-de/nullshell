@@ -8,7 +8,7 @@ nullshell: nullshell.c
 	$(CC) $(CFLAGS) $(LDFLAGS) nullshell.c -o nullshell
 
 install: nullshell
-	$(INSTALL) nullshell $(DESTDIR)$(PREFIX)/bin/nullshell
+	$(INSTALL) -D -m0755 nullshell $(DESTDIR)$(PREFIX)/bin/nullshell
 
 clean:
 	$(RM) -f nullshell
