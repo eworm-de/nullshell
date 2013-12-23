@@ -8,14 +8,17 @@
  * by Mario A. Valdez-Ramirez (http://www.mariovaldez.net/)
  */
 
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-#define SLEEPTIME 10
+#include "config.h"
 
 int main(int argc, char **argv) {
+	time_t now;
 	char *ssh_connection, *ssh_client, *ssh_tty;
+	char * string = BANNER;
 
 	/* read environment variables */
 	ssh_connection = getenv("SSH_CONNECTION");
@@ -37,8 +40,13 @@ int main(int argc, char **argv) {
 	/* print an asterisk every SLEEPTIME seconds */
 	while (1) {
 		sleep(SLEEPTIME);
-		putchar('*');
+		putchar(*string);
 		fflush(NULL);
+		if (*string == 0) {
+			time(&now);
+			string = ctime(&now);
+		} else
+			string++;
 	}
 
 	/* we should never get here.... */

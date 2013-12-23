@@ -1,9 +1,10 @@
 nullshell
 =========
 
-**do nothing but print asterisks, can be used for login shell**
+**do nothing but print keep alive characters, can be used for login shell**
 
-This is a minimal program that does nothing but print asteriks every now
+This is a minimal program that does nothing but print some characters
+(namely version information and time&date string) every now
 and then. It is intended to be used for login shell with accounts
 accessible via secure shell that are used for secure tunneling but
 should not allow to execute commands.
