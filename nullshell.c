@@ -22,7 +22,8 @@ int main(int argc, char **argv) {
 	ssh_client = getenv("SSH_CLIENT");
 	ssh_tty = getenv("SSH_TTY");
 
-	/* clear the screen */
+	/* clear the screen and set cursor to the top left
+	 * see 'man 4 console_codes' for details */
 	fputs("\033[2J\033[1;1H", stdout);
 	fflush(NULL);
 
