@@ -38,3 +38,6 @@ install-doc: README.html
 
 clean:
 	$(RM) -f README.html nullshell version.h
+
+distclean:
+	$(RM) -f README.html nullshell version.h config.h
