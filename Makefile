@@ -7,18 +7,19 @@ MD	:= markdown
 INSTALL	:= install
 RM	:= rm
 CFLAGS	+= -O2 -Wall -Werror
-VERSION := $(shell git describe --tags --long 2>/dev/null)
 # this is just a fallback in case you do not use git but downloaded
 # a release tarball...
-ifeq ($(VERSION),)
 VERSION := 0.0.2
-endif
 
 all: nullshell README.html
 
-nullshell: nullshell.c config.h
-	$(CC) $(CFLAGS) $(LDFLAGS) nullshell.c -o nullshell \
-		-DVERSION="\"$(VERSION)\""
+nullshell: nullshell.c config.h version.h
+	$(CC) $(CFLAGS) $(LDFLAGS) nullshell.c -o nullshell
+
+version.h: $(wildcard .git/HEAD .git/index .git/refs/tags/*) Makefile
+	echo "#ifndef VERSION" > $@
+	echo "#define VERSION \"$(shell git describe --tags --long 2>/dev/null || echo ${VERSION})\"" >> $@
+	echo "#endif" >> $@
 
 config.h:
 	$(CP) config.def.h config.h
@@ -36,4 +37,4 @@ install-doc: README.html
 	$(INSTALL) -D -m0755 README.html $(DESTDIR)$(PREFIX)/share/doc/nullshell/README.html
 
 clean:
-	$(RM) -f README.html nullshell
+	$(RM) -f README.html nullshell version.h

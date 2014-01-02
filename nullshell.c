@@ -14,6 +14,7 @@
 #include <unistd.h>
 
 #include "config.h"
+#include "version.h"
 
 int main(int argc, char **argv) {
 	time_t now;
