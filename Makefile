@@ -41,3 +41,7 @@ clean:
 
 distclean:
 	$(RM) -f README.html nullshell version.h config.h
+
+release:
+	git archive --format=tar.xz --prefix=nullshell-$(VERSION)/ $(VERSION) > nullshell-$(VERSION).tar.xz
+	gpg -ab nullshell-$(VERSION).tar.xz

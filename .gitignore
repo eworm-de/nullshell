@@ -2,3 +2,5 @@ config.h
 nullshell
 README.html
 version.h
+nullshell-*.tar.xz
+nullshell-*.tar.xz.asc
