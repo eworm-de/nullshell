@@ -8,13 +8,21 @@
  * by Mario A. Valdez-Ramirez (http://www.mariovaldez.net/)
  */
 
-#include <time.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #include <unistd.h>
 
 #include "config.h"
 #include "version.h"
+
+void sig_callback(int signal) {
+	printf("\nReceived signal '%s', quitting.\nBye!\n", strsignal(signal));
+
+	exit(EXIT_SUCCESS);
+}
 
 int main(int argc, char **argv) {
 	time_t now;
@@ -25,6 +33,10 @@ int main(int argc, char **argv) {
 	ssh_connection = getenv("SSH_CONNECTION");
 	ssh_client = getenv("SSH_CLIENT");
 	ssh_tty = getenv("SSH_TTY");
+
+	/* register signal callbacks */
+	signal(SIGTERM, sig_callback);
+	signal(SIGINT, sig_callback);
 
 	/* clear the screen and set cursor to the top left
 	 * see 'man 4 console_codes' for details */
