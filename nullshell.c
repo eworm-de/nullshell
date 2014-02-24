@@ -57,7 +57,10 @@ int main(int argc, char **argv) {
 		fflush(NULL);
 		if (*string == 0) {
 			time(&now);
-			string = ctime(&now);
+			if ((now / 30) % 30 > 0)
+				string = ctime(&now);
+			else
+				string = BANNER;
 		} else
 			string++;
 	}
