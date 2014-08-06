@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
 			printf("Terminal: %s\n", ssh_tty);
 	}
 
-	/* print an asterisk every SLEEPTIME seconds */
+	/* print an character every SLEEPTIME seconds */
 	while (1) {
 		sleep(SLEEPTIME);
 		putchar(*string);
