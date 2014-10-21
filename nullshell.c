@@ -8,6 +8,8 @@
  * by Mario A. Valdez-Ramirez (http://www.mariovaldez.net/)
  */
 
+#define _GNU_SOURCE
+
 #include <inttypes.h>
 #include <signal.h>
 #include <stdio.h>

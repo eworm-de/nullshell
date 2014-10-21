@@ -6,7 +6,7 @@ CC	:= gcc
 MD	:= markdown
 INSTALL	:= install
 RM	:= rm
-CFLAGS	+= -O2 -Wall -Werror
+CFLAGS	+= -std=c11 -O2 -Wall -Werror
 # this is just a fallback in case you do not use git but downloaded
 # a release tarball...
 VERSION := 0.0.5
