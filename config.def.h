@@ -13,7 +13,9 @@
 
 /* some text to be printed */
 #define URL	"https://github.com/eworm-de/nullshell"
-#define BANNER	"Do-nothing-loop by nullshell " VERSION " (" URL ").\n"
+#define BANNER	"Do-nothing-loop by nullshell " VERSION ",\n" \
+	"compiled on " __DATE__ " " __TIME__ ".\n" \
+	"Visit homepage: " URL "\n"
 
 #endif /* _CONFIG_H */
 
