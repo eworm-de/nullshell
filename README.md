@@ -46,3 +46,8 @@ Or to make `nullshell` the login shell for an existing user `user`:
 
 Make sure `/usr/bin/nullshell` is listed in `/etc/shells` if your system
 expects this.
+
+### Upstream
+
+URL: [GitHub.com](https://github.com/eworm-de/nullshell)  
+Mirror: [eworm.de](http://git.eworm.de/cgit.cgi/nullshell/)
