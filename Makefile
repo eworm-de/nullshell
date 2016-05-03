@@ -1,12 +1,18 @@
 # nullshell - do nothing but print asterisks, can be used for login shell
 
 PREFIX	:= /usr
-CP	:= cp
+
+# commands
 CC	:= gcc
-MD	:= markdown
+CP	:= cp
 INSTALL	:= install
+MD	:= markdown
 RM	:= rm
-CFLAGS	+= -std=c11 -O2 -Wall -Werror
+
+# flags
+CFLAGS	+= -std=c11 -O2 -fPIC -Wall -Werror
+LDFLAGS	+= -Wl,-z,now -Wl,-z,relro -pie
+
 # this is just a fallback in case you do not use git but downloaded
 # a release tarball...
 VERSION := 0.0.6
@@ -14,7 +20,7 @@ VERSION := 0.0.6
 all: nullshell README.html
 
 nullshell: nullshell.c config.h version.h
-	$(CC) $(CFLAGS) $(LDFLAGS) nullshell.c -o nullshell
+	$(CC) $(CFLAGS) $(LDFLAGS) -o nullshell nullshell.c
 
 version.h: $(wildcard .git/HEAD .git/index .git/refs/tags/*) Makefile
 	echo "#ifndef VERSION" > $@
