@@ -49,3 +49,4 @@ distclean:
 release:
 	git archive --format=tar.xz --prefix=nullshell-$(VERSION)/ $(VERSION) > nullshell-$(VERSION).tar.xz
 	gpg -ab nullshell-$(VERSION).tar.xz
+	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=nullshell-$(VERSION)/ $(VERSION) | gpg --armor --detach-sign | git hash-object -w --stdin) $(VERSION)
