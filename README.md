@@ -49,5 +49,9 @@ expects this.
 
 ### Upstream
 
-URL: [GitHub.com](https://github.com/eworm-de/nullshell)  
-Mirror: [eworm.de](https://git.eworm.de/cgit.cgi/nullshell/)
+URL:
+[GitHub.com](https://github.com/eworm-de/nullshell)  
+
+Mirror:
+[eworm.de](https://git.eworm.de/cgit.cgi/nullshell/)
+[GitLab.com](https://gitlab.com/eworm-de/nullshell)  
