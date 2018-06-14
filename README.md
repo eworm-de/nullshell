@@ -15,7 +15,7 @@ Requirements
 To compile and run `nullshell` you need:
 
 * nothing (this is plain C)
-* [markdown](http://daringfireball.net/projects/markdown/) (HTML documentation)
+* [markdown](https://daringfireball.net/projects/markdown/) (HTML documentation)
 
 Additionally it is expected to have `make` and a C compiler around to
 successfully compile.
