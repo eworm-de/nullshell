@@ -47,6 +47,19 @@ Or to make `nullshell` the login shell for an existing user `user`:
 Make sure `/usr/bin/nullshell` is listed in `/etc/shells` if your system
 expects this.
 
+License and warranty
+--------------------
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+[GNU General Public License](COPYING.md) for more details.
+
 ### Upstream
 
 URL:
