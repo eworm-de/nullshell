@@ -1,5 +1,5 @@
 /*
- * (C) 2013-2023 by Christian Hesse <mail@eworm.de>
+ * (C) 2013-2024 by Christian Hesse <mail@eworm.de>
  *
  * Based on ideas from Sleep Dummy Shell (SleepShell)
  * by Mario A. Valdez-Ramirez (http://www.mariovaldez.net/)
