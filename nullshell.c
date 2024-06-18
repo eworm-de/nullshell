@@ -54,8 +54,10 @@ int main(int argc, char **argv) {
 	ssh_tty = getenv("SSH_TTY");
 
 	/* register signal callbacks */
-	signal(SIGTERM, sig_callback);
-	signal(SIGINT, sig_callback);
+	struct sigaction act = { 0 };
+	act.sa_handler = sig_callback;
+	sigaction(SIGINT, &act, NULL);
+	sigaction(SIGTERM, &act, NULL);
 
 	/* clear the screen and set cursor to the top left
 	 * see 'man 4 console_codes' for details */
