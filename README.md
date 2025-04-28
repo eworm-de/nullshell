@@ -68,3 +68,6 @@ URL:
 Mirror:
 [eworm.de](https://git.eworm.de/cgit.cgi/nullshell/)
 [GitLab.com](https://gitlab.com/eworm-de/nullshell#nullshell)
+
+---
+[⬆️ Go back to top](#top)
