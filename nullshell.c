@@ -67,9 +67,9 @@ int main(int argc, char **argv) {
 			printf("Terminal: %s\n", ssh_tty);
 	}
 
-	/* print a character every SLEEPTIME seconds */
+	/* print a character every SLEEPTIME milli-seconds */
 	while (1) {
-		sleep(SLEEPTIME);
+		usleep(SLEEPTIME * 1000);
 		putchar(*string);
 		fflush(NULL);
 		if (*string == 0) {

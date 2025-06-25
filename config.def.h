@@ -19,8 +19,8 @@
 #ifndef _CONFIG_H
 #define _CONFIG_H
 
-/* this is the time to sleep between printing characters */
-#define SLEEPTIME	1
+/* this is the time to sleep (in milli-seconds) between printing characters */
+#define SLEEPTIME	1000
 
 /* this is the number of line between banner appears */
 #define	BANNERCONST	20
