@@ -22,6 +22,9 @@
 /* this is the time to sleep between printing characters */
 #define SLEEPTIME	1
 
+/* this is the number of line between banner appears */
+#define	BANNERCONST	20
+
 /* some text to be printed */
 #define URL	"https://nullshell.eworm.de/"
 #define BANNER	"Do-nothing-loop by nullshell " VERSION ",\n" \

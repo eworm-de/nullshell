@@ -40,13 +40,9 @@ void sig_callback(int signal) {
 
 int main(int argc, char **argv) {
 	time_t now;
-	uint8_t start;
+	uint8_t lines = BANNERCONST;
 	char *ssh_connection, *ssh_client, *ssh_tty;
 	char * string = BANNER;
-
-	/* get the start time and calculate modulo */
-	time(&now);
-	start = (now / 30) % 30;
 
 	/* read environment variables */
 	ssh_connection = getenv("SSH_CONNECTION");
@@ -77,11 +73,13 @@ int main(int argc, char **argv) {
 		putchar(*string);
 		fflush(NULL);
 		if (*string == 0) {
-			time(&now);
-			if ((now / 30) % 30 != start)
+			if (lines-- > 0) {
+				time(&now);
 				string = ctime(&now);
-			else
+			} else {
 				string = BANNER;
+				lines = BANNERCONST;
+			}
 		} else
 			string++;
 	}
