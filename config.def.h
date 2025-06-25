@@ -23,7 +23,7 @@
 #define SLEEPTIME	1
 
 /* some text to be printed */
-#define URL	"https://github.com/eworm-de/nullshell"
+#define URL	"https://nullshell.eworm.de/"
 #define BANNER	"Do-nothing-loop by nullshell " VERSION ",\n" \
 	"compiled on " __DATE__ " " __TIME__ ".\n" \
 	"Visit homepage: " URL "\n"
