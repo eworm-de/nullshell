@@ -1,6 +1,10 @@
 nullshell
 =========
 
+[![GitHub stars](https://img.shields.io/github/stars/eworm-de/nullshell?logo=GitHub&style=flat&color=red)](https://github.com/eworm-de/nullshell/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/eworm-de/nullshell?logo=GitHub&style=flat&color=green)](https://github.com/eworm-de/nullshell/network)
+[![GitHub watchers](https://img.shields.io/github/watchers/eworm-de/nullshell?logo=GitHub&style=flat&color=blue)](https://github.com/eworm-de/nullshell/watchers)
+
 **do nothing but print keep alive characters, can be used for login shell**
 
 This is a minimal program that does nothing but print some characters
