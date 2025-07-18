@@ -33,11 +33,11 @@ Build and install
 
 Building and installing is very easy. Just run:
 
-> make
+    make
 
 followed by:
 
-> make install
+    make install
 
 This will place an executable at `/usr/bin/nullshell`.
 
@@ -46,11 +46,11 @@ Usage
 
 To create a new user `user` with `nullshell` as login shell just run:
 
-> useradd -s /usr/bin/nullshell user
+    useradd -s /usr/bin/nullshell user
 
 Or to make `nullshell` the login shell for an existing user `user`:
 
-> usermod -s /usr/bin/nullshell user
+    usermod -s /usr/bin/nullshell user
 
 Make sure `/usr/bin/nullshell` is listed in `/etc/shells` if your system
 expects this.
