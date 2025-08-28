@@ -15,7 +15,8 @@ LDFLAGS	+= -Wl,-z,now -Wl,-z,relro -pie
 
 # this is just a fallback in case you do not use git but downloaded
 # a release tarball...
-VERSION := 0.0.8
+DISTVER := 0.0.8
+VERSION ?= $(shell git describe --long 2>/dev/null || echo $(DISTVER))
 
 all: nullshell README.html
 
@@ -47,6 +48,6 @@ distclean:
 	$(RM) -f README.html nullshell version.h config.h
 
 release:
-	git archive --format=tar.xz --prefix=nullshell-$(VERSION)/ $(VERSION) > nullshell-$(VERSION).tar.xz
-	gpg --armor --detach-sign --comment nullshell-$(VERSION).tar.xz nullshell-$(VERSION).tar.xz
-	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=nullshell-$(VERSION)/ $(VERSION) | gpg --armor --detach-sign --comment nullshell-$(VERSION).tar | git hash-object -w --stdin) $(VERSION)
+	git archive --format=tar.xz --prefix=nullshell-$(DISTVER)/ $(DISTVER) > nullshell-$(DISTVER).tar.xz
+	gpg --armor --detach-sign --comment nullshell-$(DISTVER).tar.xz nullshell-$(DISTVER).tar.xz
+	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=nullshell-$(DISTVER)/ $(DISTVER) | gpg --armor --detach-sign --comment nullshell-$(DISTVER).tar | git hash-object -w --stdin) $(DISTVER)
