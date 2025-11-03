@@ -24,7 +24,7 @@ nullshell: nullshell.c config.h version.h
 	$(CC) nullshell.c $(CFLAGS) $(LDFLAGS) -o nullshell
 
 version.h: $(wildcard .git/HEAD .git/index .git/refs/tags/*) Makefile
-	printf "#ifndef VERSION\n#define VERSION \"%s\"\n#endif\n" $(shell git describe --long 2>/dev/null || echo ${VERSION}) > $@
+	printf "#ifndef VERSION\n#define VERSION \"%s\"\n#endif\n" "$(VERSION)" > $@
 
 config.h:
 	$(CP) config.def.h config.h
