@@ -32,5 +32,3 @@
 	"Visit homepage: " URL "\n"
 
 #endif /* _CONFIG_H */
-
-// vim: set syntax=c:

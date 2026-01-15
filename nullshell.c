@@ -87,5 +87,3 @@ int main(int argc, char **argv) {
 	/* we should never get here.... */
 	return EXIT_SUCCESS;
 }
-
-// vim: set syntax=c:
